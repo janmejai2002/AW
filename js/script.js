@@ -7,6 +7,7 @@ let timerRunning = false;
 
 // References to DOM elements
 const timerDisplay = document.getElementById("timer-display");
+
 const progressIndicator = document.getElementById("progress-indicator");
 const phaseDisplay = document.getElementById("phase-display"); // Add a new element for phase display
 const startButton = document.getElementById("start-btn");
@@ -36,12 +37,13 @@ function setTotalTime(seconds) {
 
 function startTimer() {
   if (!timerRunning && totalTime > 0) {
-    timer = setInterval(updateTimer, 1000);
-    startButton.disabled = true;
-    timerRunning = true;
-    doneButton.style.display = "block"; // Show the "Done" button
+      timer = setInterval(updateTimer, 1000);
+      startButton.disabled = true;
+      timerRunning = true;
+      doneButton.style.display = "block"; // Show the "Done" button
   }
 }
+
 
 function updateTimer() {
   if (currentTime > 0) {
@@ -69,6 +71,7 @@ function updateTimerDisplay() {
     const minutes = Math.floor(totalSeconds / 60);
     const seconds = totalSeconds % 60;
     timerDisplay.textContent = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+
   }
   
 
@@ -77,13 +80,13 @@ function updateProgressIndicator() {
   progressIndicator.style.width = `${percentDone}%`;
 
   if (percentDone <= 10) {
-    progressIndicator.className = "yellow";
+    progressIndicator.className = "progress-bar progress-bar-striped progress-bar-animated bg-warning";
     phase = "Think";
   } else if (percentDone <= 95) {
-    progressIndicator.className = "green";
+    progressIndicator.className = "progress-bar progress-bar-striped progress-bar-animated bg-success";
     phase = "Write";
   } else {
-    progressIndicator.className = "red";
+    progressIndicator.className = "progress-bar progress-bar-striped progress-bar-animated bg-danger";
     phase = "Conclude";
   }
   
@@ -99,7 +102,7 @@ function resetTimer() {
   timerRunning = false;
   updateTimerDisplay();
   progressIndicator.style.width = "0%";
-  progressIndicator.className = "";
+  progressIndicator.className = "progress-bar bg-info";
   doneButton.style.display = "none";
   startButton.disabled = false;
   phaseDisplay.textContent = ""; // Clear phase display
@@ -113,9 +116,9 @@ function logExtraTime() {
   const cell1 = newRow.insertCell(0);
   cell1.textContent = extraTimeLog.rows.length; // Serial number
   const cell2 = newRow.insertCell(1);
-  // console.log(totalTime);
-  // console.log(currentTime);
-  // console.log(extraTime);
+  console.log(totalTime);
+  console.log(currentTime);
+  console.log(extraTime);
   if (currentTime<totalTime && currentTime!=0){
     cell2.textContent = "+" + currentTime + " seconds";
   }
