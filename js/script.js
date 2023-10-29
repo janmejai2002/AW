@@ -15,7 +15,7 @@ const doneButton = document.getElementById("done-btn");
 const resetButton = document.getElementById("reset-btn");
 
 // Event listeners for buttons
-document.getElementById("btn-7-min").addEventListener("click", () => setTotalTime(5));
+document.getElementById("btn-7-min").addEventListener("click", () => setTotalTime(7 * 60));
 document.getElementById("btn-11-min").addEventListener("click", () => setTotalTime(11 * 60));
 startButton.addEventListener("click", startTimer);
 resetButton.addEventListener("click", resetTimer);
