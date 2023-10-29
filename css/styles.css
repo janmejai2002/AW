@@ -1,0 +1,78 @@
+/* Reset some default styles */
+body, h1, button {
+    margin: 0;
+    padding: 0;
+    font-family: "Google Sans", sans-serif;
+}
+
+body {
+    background-color: #f0f0f0;
+    text-align: center;
+}
+
+h1 {
+    font-size: 24px;
+    color: #333;
+    margin-top: 20px;
+}
+
+/* Styles for timer buttons */
+.timer-button {
+    background-color: #3498db;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s; /* Add a transition for smooth color change */
+}
+
+.timer-button:active {
+    background-color: #2588c7; /* Change the color when the button is pressed */
+}
+
+#timer-display {
+    font-size: 36px;
+    margin: 20px;
+    color: #333;
+}
+
+#progress-indicator {
+    width: 100%;
+    height: 20px;
+    background-color: yellow;
+}
+
+/* Define the colors for different timer phases */
+#progress-indicator.green {
+    background-color: green;
+}
+
+#progress-indicator.red {
+    background-color: red;
+}
+
+#done-btn {
+    display: none; /* Initially hide the "Done" button */
+    background-color: #e74c3c;
+}
+
+table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 8px;
+    text-align: center;
+}
+
+/* Add responsive CSS rules here */
+@media (max-width: 768px) {
+    /* Define styles for smaller screens */
+}
