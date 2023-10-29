@@ -48,11 +48,14 @@ function updateTimer() {
     currentTime--;
     updateTimerDisplay();
     updateProgressIndicator();
+  
   } else {
     // extraTime++;
     extraTime++;
     updateNegTimerDisplay();
   }
+
+
 }
 function updateNegTimerDisplay() {
     const totalSeconds = currentTime + extraTime;
@@ -116,7 +119,11 @@ function logExtraTime() {
   if (currentTime<totalTime && currentTime!=0){
     cell2.textContent = "+" + currentTime + " seconds";
   }
-  else{
+  else if (currentTime==0 && extraTime ==0 ){
+    cell2.textContent = extraTime + " seconds"; // Extra time taken
+
+  }
+  else {
     cell2.textContent = "-" + extraTime + " seconds"; // Extra time taken
 }
 }
