@@ -110,8 +110,10 @@ function logExtraTime() {
   const cell1 = newRow.insertCell(0);
   cell1.textContent = extraTimeLog.rows.length; // Serial number
   const cell2 = newRow.insertCell(1);
-
-  if (currentTime<totalTime){
+  // console.log(totalTime);
+  // console.log(currentTime);
+  // console.log(extraTime);
+  if (currentTime<totalTime && currentTime!=0){
     cell2.textContent = "+" + currentTime + " seconds";
   }
   else{
